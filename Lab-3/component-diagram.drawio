@@ -1,0 +1,270 @@
+<mxfile host="app.diagrams.net" modified="2026-09-12T19:30:00.000Z" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="Incident Escalation Architecture" id="incident-escalation-architecture">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title"
+          value="&lt;b&gt;Incident Escalation &amp; On-Call Rotation Engine&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px&quot;&gt;Microservices Architecture — UML Component Diagram&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=20;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1160" height="75" as="geometry"/>
+        </mxCell>
+
+        <!-- MONITORING SYSTEM -->
+        <mxCell id="monitor"
+          value="&lt;b&gt;Monitoring /&lt;br&gt;Alerting System&lt;/b&gt;"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;align=center;fontSize=14;"
+          vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="90" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ALERT INGESTION -->
+        <mxCell id="ingestion"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;Alert Ingestion Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Receives and validates&lt;br&gt;incident alerts&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#3c78d8;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="45" y="310" width="220" height="105" as="geometry"/>
+        </mxCell>
+
+        <!-- ESCALATION MANAGER -->
+        <mxCell id="manager"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;Incident Escalation Manager&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Core orchestration&lt;br&gt;(acknowledgement, escalation,&lt;br&gt;workflow)&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#f4cccc;strokeColor=#cc0000;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="390" y="295" width="270" height="125" as="geometry"/>
+        </mxCell>
+
+        <!-- ON CALL ROTATION -->
+        <mxCell id="rotation"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;On-Call Rotation Manager&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Manages on-call schedules&lt;br&gt;and engineer lookup&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#e4d7f5;strokeColor=#674ea7;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="760" y="145" width="270" height="105" as="geometry"/>
+        </mxCell>
+
+        <!-- NOTIFICATION -->
+        <mxCell id="notification"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;Notification Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Sends alerts via&lt;br&gt;SMS / Email / Phone&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#d9ead3;strokeColor=#38761d;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="755" y="320" width="245" height="105" as="geometry"/>
+        </mxCell>
+
+        <!-- INCIDENT REPOSITORY -->
+        <mxCell id="repository"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;Incident Repository&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Stores incident, escalation&lt;br&gt;and audit data&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#bf9000;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="1010" y="300" width="155" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- STATUS -->
+        <mxCell id="status"
+          value="&lt;&lt;component&gt;&gt;&lt;br&gt;&lt;b&gt;Status &amp; Post-Mortem Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Tracks incident status,&lt;br&gt;history and post-mortem records&lt;/font&gt;"
+          style="shape=component;whiteSpace=wrap;html=1;fillColor=#f4cccc;strokeColor=#cc0000;strokeWidth=2;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="900" y="505" width="265" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- INCIDENT COMMANDER -->
+        <mxCell id="commander"
+          value="&lt;b&gt;Incident&lt;br&gt;Commander&lt;/b&gt;"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;align=center;fontSize=14;"
+          vertex="1" parent="1">
+          <mxGeometry x="1050" y="135" width="85" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ON-CALL ENGINEER -->
+        <mxCell id="engineer"
+          value="&lt;b&gt;On-Call&lt;br&gt;Engineer&lt;/b&gt;"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;align=center;fontSize=14;"
+          vertex="1" parent="1">
+          <mxGeometry x="455" y="535" width="90" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- PROVIDED INTERFACE BALLS -->
+
+        <mxCell id="ball1" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="260" y="348" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ball2" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="655" y="348" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ball3" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="748" y="195" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ball4" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="743" y="365" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ball5" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="1000" y="345" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ball6" value=""
+          style="shape=ellipse;aspect=fixed;fillColor=white;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="890" y="550" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- REQUIRED SOCKETS -->
+        <mxCell id="socket1" value=""
+          style="shape=arc;html=1;startAngle=90;endAngle=270;fillColor=none;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="380" y="345" width="22" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="socket2" value=""
+          style="shape=arc;html=1;startAngle=90;endAngle=270;fillColor=none;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="650" y="185" width="22" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="socket3" value=""
+          style="shape=arc;html=1;startAngle=90;endAngle=270;fillColor=none;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="735" y="355" width="22" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="socket4" value=""
+          style="shape=arc;html=1;startAngle=90;endAngle=270;fillColor=none;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="985" y="340" width="22" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="socket5" value=""
+          style="shape=arc;html=1;startAngle=90;endAngle=270;fillColor=none;strokeColor=#000000;strokeWidth=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="875" y="545" width="22" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- LABELS -->
+
+        <mxCell id="label1" value="Incident API&lt;br&gt;(REST)"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=11;"
+          vertex="1" parent="1">
+          <mxGeometry x="275" y="315" width="110" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label2" value="On-Call Lookup API&lt;br&gt;(REST)"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=11;"
+          vertex="1" parent="1">
+          <mxGeometry x="665" y="235" width="125" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label3" value="Notification API&lt;br&gt;(REST)"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=11;"
+          vertex="1" parent="1">
+          <mxGeometry x="665" y="395" width="110" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label4" value="Incident Data API&lt;br&gt;(REST)"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=11;"
+          vertex="1" parent="1">
+          <mxGeometry x="825" y="300" width="125" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label5" value="Status Update API&lt;br&gt;(REST)"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=11;"
+          vertex="1" parent="1">
+          <mxGeometry x="765" y="500" width="130" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- EXTERNAL CONNECTIONS -->
+
+        <mxCell id="ext1"
+          value="Incident Webhook&lt;br&gt;(HTTP)"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="monitor" target="ingestion">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext2"
+          value="Dashboard API&lt;br&gt;(REST)"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="commander" target="status">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext3"
+          value="Acknowledgement API&lt;br&gt;(REST)"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeWidth=2;endArrow=block;endFill=1;"
+          edge="1" parent="1" source="engineer" target="manager">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext4"
+          value="Alert Delivery&lt;br&gt;(SMS / Email / Phone)"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeWidth=2;endArrow=block;endFill=1;"
+          edge="1" parent="1" source="notification" target="engineer">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- INTERNAL COMPONENT CONNECTIONS -->
+
+        <mxCell id="conn1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="ingestion" target="manager">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="manager" target="rotation">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn3"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="manager" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn4"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="manager" target="repository">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn5"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=none;"
+          edge="1" parent="1" source="manager" target="status">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend"
+          value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;&lt;br&gt;○  Provided Interface (ball)&lt;br&gt;◡  Required Interface (socket)&lt;br&gt;━━  Component Connection&lt;br&gt;╌╌  External Actor Interaction"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;align=left;verticalAlign=top;spacing=10;fontSize=12;"
+          vertex="1" parent="1">
+          <mxGeometry x="45" y="500" width="280" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- FLOW -->
+        <mxCell id="flow"
+          value="&lt;b&gt;Flow:&lt;/b&gt;&lt;br&gt;Monitoring System → Alert Ingestion → Escalation Manager&lt;br&gt;→ On-Call Lookup / Notification / Status &amp; Audit"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2f0d9;strokeColor=#6aa84f;align=left;verticalAlign=middle;spacing=10;fontSize=12;"
+          vertex="1" parent="1">
+          <mxGeometry x="570" y="625" width="595" height="55" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
